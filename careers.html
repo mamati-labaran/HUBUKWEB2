@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navigation">
+        <div class="logo">
+            <img src="Logomark.png" alt="logo">
+            <span>hubuk</span>
+        </div>
+        <div>
+            <a href="#" class="open-roles">See open roles at hubuk</a>
+            <a href="#" class="apply">Apply Now</a>
+        </div>
+        
+        
+        <!-- <img src="menu.png" width="23px" height="23px" class="menu"></a> -->
+    </header>
+    <section class="form-container">
+        <form name="careerForm" method="POST" onsubmit="return validateForm()">
+            <header>UI/UX Designer</header>
+            <a class="full-time" href="#">Full-time</a>
+            <a class="remote" href="#">Remote</a>
+            <h2>Apply for this job</h2>
+            <div class="column">
+                <div class="input-box">
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="first-name" class="first-name" id="first-name" >
+                    <p id="fnameAlert" class="alert"></p>
+                </div>
+                <div class="input-box">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="last-name" class="last-name" id="last-name" >
+                    <p id="lnameAlert" class="alert"></p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="input-box">
+                    <label for="email">Email Address</label>
+                    <input type="text" class="email" id="email" name="email" >
+                    <p id="emailAlert" class="alert"></p>
+                </div>
+                <div class="input-box">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" class="phone" id="phone" name="phone" maxlength="11">
+                </div>
+            </div>
+            <div class="input-box">
+                <label for="address">Parmanent Address</label>
+                <input type="text" class="address" id="address">
+            </div>
+            <div class="upload">
+                <label for="resume">
+                    <p class="head_text">Resume/CV</p>
+                    <div class="upload_border"> 
+                        <img class="upload_icon" src="Featured icon.png" width="40px" height="40px">
+                        <p><span>Click to upload</span> or drag and drop</p>
+                        <p class="support_text">The format should be PDF or Word document (Max 5MB)</p>
+                        <input type="file" class="resume" id="resume" name="resume" accept=".doc, .docx, .pdf" hidden>
+                    </div>
+                </label> 
+                
+            </div>
+            <div class="upload">
+                <label for="cover">
+                    <p>Cover Letter</p>
+                    <div class="upload_border"> 
+                        <img class="upload_icon" src="Featured icon.png" width="40px" height="40px">
+                        <p><span>Click to upload</span> or drag and drop</p>
+                        <p>The format should be PDF or Word document (Max 5MB)</p>
+                        <input type="file" class="cover" name="cover" id="cover" accept=".doc, .docx, .pdf" hidden>
+                    </div>
+                </label> 
+                
+            </div>
+            <div class="uploaded_box">
+                <div class="uploaded_left">
+                    <p id="resume_file_info"></p>
+                    <placeholder>
+                        <p><!--Resume/CV--></p>
+                        <span><!--2MB--></span>
+                    </placeholder>
+                </div>
+                <img id="resume_delete" class="uploaded_right" src="Icon.png" width="15" height="15">
+            </div>
+            <div class="uploaded_box">
+                <div class="uploaded_left">
+                    <p id="cover_file_info"></p>
+                    <p class="left"><!--Cover Letter--></p>
+                    <span class="left"><!--2MB--></span>
+                </div>
+                <img id="cover_delete" class="uploaded_right" src="Icon.png" width="15" height="15">
+            </div>
+            <div class="column">
+                <div class="input-box">
+                    <label for="linkedIn">LinkedIn Profile</label>
+                    <input type="url" class="linkedIn" id="linkedIn" name="linkedIn">
+                </div>
+                <div class="input-box">
+                    <label for="portfolio_link">Portfolio/Website Link</label>
+                    <input type="url" class="portfolio_link" name="portfolio_link" id="portfolio_link">
+                </div>
+            </div>
+            <input type="submit" class="submit" name="submit" value="Submit your application">
+        </form>
+    </section>
+    <footer>
+        <div class="col-1">
+            <div class="logo logo2">
+                <img src="Logomark.png" alt="logo">
+                <span>hubuk</span>
+            </div> 
+            <div class="description">
+                <p>We design, build and launch <br>softwares for ambitious clients <br><br>Info@hubuk.ng</p>
+                <div class="copyright">
+                    <p>© Hubuk 2022. All rights reserved.</p>
+                </div>
+            </div> 
+        </div>
+        <div class="col-2">
+            <div class="company-list">
+                <h5><strong>Company</strong></h5>
+                <ul>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="follow-us-list">
+                <h5><strong>Follow Us</strong></h5>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+            <!-- <div class="follow">
+                <p>Let's connect</p>
+                <div class="socials">
+                    <img src="instagram.png" alt="instagram" width="32" height="32">
+                    <img src="Facebook.png" alt="facebook"width="32" height="32">
+                    <img src="twitter.png" alt="twitter"width="32" height="32">
+                </div>
+            </div> -->
+        </div>
+    </footer>
+    <script src="careers.js"></script>
+</body>
+</html>
