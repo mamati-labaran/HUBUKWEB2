@@ -22,6 +22,7 @@ const cover_file_info = document.getElementById('cover_file_info');
 cover_file_input.addEventListener('change', () => {
     const cover_file = cover_file_input.files[0];
     const cover_file_name = cover_file.name;
+    const cover_file_size = cover_file.size;
     // const cover_file_type = cover_file.type;
 
     // resume_file_info.textContent = `File name: ${resume_file_name}, File type: ${resume_file_type}`;
@@ -80,5 +81,5 @@ function validateForm(){
          document.getElementById("phoneAlert").innerHTML=""
     }
     
-    
+
 }
