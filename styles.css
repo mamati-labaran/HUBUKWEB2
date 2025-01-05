@@ -567,6 +567,16 @@ footer h5{
     color: #344054;
     
 }
+.container_success{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.message{
+    text-align: center;
+}
 /* footer .folow{
     display: none;
 } */

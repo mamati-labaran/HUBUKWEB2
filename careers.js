@@ -46,6 +46,17 @@ cover_delete.addEventListener('click',() => {
     document.getElementById('cover_name').innerHTML ="";
 });
 
+document.getElementById("careerForm").addEventListener("submit", function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Run the validation function
+    if (validateForm()) {
+        // If validation passes, redirect to another page
+        window.location.href = "success.html"; // Replace 'success.html' with your target URL
+    }
+});
+
 function validateForm(){
     let fname = document.forms["careerForm"]["first-name"].value;
     let lname = document.forms["careerForm"]["last-name"].value;
@@ -95,5 +106,5 @@ function validateForm(){
          document.getElementById("phoneAlert").innerHTML=""
     }
     
-
+    return true;
 }

@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="body" style="background-color: rgb(247, 239, 239); width: 20%;">
-        <h1>welcome</h1>
-        <h2 id = success_message>thank you</h2>
-    </div>
     
-    <script src="careers.js"></script>
+    <div class="container_success">
+        <div class="message">
+            <p>Thank you for applying<span id="success_name"></span>!<br>An email will be sent with your application details</p>
+        </div>
+    </div>
+    <script>
+        let firstName = sessionStorage.getItem('userName');
+        document.getElementById('success_name').innerHTML= firstName;
+    </script>
+    
 </body>
 </html>
