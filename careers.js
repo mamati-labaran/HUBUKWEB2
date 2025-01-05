@@ -1,35 +1,49 @@
 const resume_file_input = document.getElementById('resume');
-const resume_file_info = document.getElementById('resume_file_info');
+// const resume_file_info = document.getElementById('resume_file_info');
 
 resume_file_input.addEventListener('change', () => {
     const resume_file = resume_file_input.files[0];
     const resume_file_name = resume_file.name;
     const resume_file_size = resume_file.size;
-    // const resume_file_type = resume_file.type;
-    
+    const resumeSizeInKB = (resume_file_size/1024).toFixed(2);
+    const resumeSizeInMB = (resumeSizeInKB/1024).toFixed(2);
 
-    // resume_file_info.textContent = `File name: ${resume_file_name}, File type: ${resume_file_type}`;
-    // document.getElementById('resume_file_info').innerHTML = resume_file_name + ' ' + resume_file_type;
-    document.getElementById('resume_file_info').innerHTML = resume_file_name;
+    document.getElementById('resume_name').innerHTML = resume_file_name;
+
+    // size display
+    if (resume_file_size > 1024 && resume_file_size < 1048576){
+        document.getElementById('resume_size').innerHTML = resumeSizeInKB + "KB";
+    }else if (resume_file_size >= 1048576){
+        document.getElementById('resume_size').innerHTML = resumeSizeInMB + "MB";
+    }
+    
 });
 resume_delete.addEventListener('click', ()=>{
-    document.getElementById('resume_file_info').innerHTML ="";
+    document.getElementById('resume_name').innerHTML ="";
+    document.getElementById('resume_size').innerHTML ="";
 });
 
 const cover_file_input = document.getElementById('cover');
-const cover_file_info = document.getElementById('cover_file_info');
+// const cover_file_info = document.getElementById('cover_file_info');
 
 cover_file_input.addEventListener('change', () => {
     const cover_file = cover_file_input.files[0];
     const cover_file_name = cover_file.name;
     const cover_file_size = cover_file.size;
-    // const cover_file_type = cover_file.type;
+    const coverSizeInKB = (cover_file_size/1024).toFixed(2);
+    const coverSizeInMB = (coverSizeInKB/1024).toFixed(2);
 
-    // resume_file_info.textContent = `File name: ${resume_file_name}, File type: ${resume_file_type}`;
-    document.getElementById('cover_file_info').innerHTML = cover_file_name;
+    document.getElementById('cover_name').innerHTML = cover_file_name;
+    if (cover_file_size > 1024 && cover_file_size < 1048576){
+        document.getElementById('cover_size').innerHTML = coverSizeInKB + "KB";
+    }else if (cover_file_size >= 1048576){
+        document.getElementById('cover_size').innerHTML = coverSizeInMB + "MB";
+    }
+    
+    document.getElementById('cover_name').innerHTML = cover_file_name;
 });
 cover_delete.addEventListener('click',() => {
-    document.getElementById('cover_file_info').innerHTML ="";
+    document.getElementById('cover_name').innerHTML ="";
 });
 
 function validateForm(){

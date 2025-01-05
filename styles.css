@@ -561,6 +561,10 @@ footer h5{
 .alert{
     font-size: 12px;
     color: red;
+
+}
+#resume_name, #resume_size, #cover_name, #cover_size{
+    color: #344054;
     
 }
 /* footer .folow{
