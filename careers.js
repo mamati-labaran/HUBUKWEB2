@@ -49,11 +49,12 @@ cover_delete.addEventListener('click',() => {
 document.getElementById("careerForm").addEventListener("submit", function(event) {
     // Prevent the default form submission
     event.preventDefault();
+    let fname = document.forms["careerForm"]["first-name"].value;
 
     // Run the validation function
     if (validateForm()) {
-        // If validation passes, redirect to another page
-        window.location.href = "success.html"; // Replace 'success.html' with your target URL
+        // If validation passes, redirect to another page with the name as query parameter
+        window.location.href = "success.html?name=" + encodeURIComponent(fname);
     }
 });
 

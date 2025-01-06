@@ -576,6 +576,16 @@ footer h5{
 }
 .message{
     text-align: center;
+    font-size: larger;
+}
+/* fefdff */
+#go_back{
+    margin-top: 20px;
+    padding: 12px 16px;
+    border: none;
+    background-color: #6C2B89;
+    border-radius: 6px;
+    color: #FEFDFF;
 }
 /* footer .folow{
     display: none;
