@@ -319,9 +319,7 @@ body{
 .no_2{
     background-color: #6C2B89;
 }
-.no_2 .quote2{
-    border: 10px solid whit;
-}
+
 .hero-header{
     padding: 50px;
     /* background-image: url("Vector 1.png");COME BACK HERE!!!! */
@@ -411,8 +409,14 @@ footer h5{
     padding: 100px;
     align-items: center;
     color: #FEFDFF;
-    height: 300px;
+    min-height: 300px;
     
+}
+.no_2 .quotename{
+    font-size: 30px;
+}
+.no_2 .quotedesc{
+    font-size: 18px;
 }
 .no_2.quote-container2{
     padding-left: 100px;
@@ -426,10 +430,10 @@ footer h5{
     padding-left: 20px;
    
 }
-.person h5{
+/* .person h5{
     font-size: 30px;
     font-weight: lighter;
-}   
+}    */
 .profile2{
     float: left;
     display: flex;
@@ -558,7 +562,7 @@ footer h5{
 .uploaded_right{
     justify-content: center;
 }
-.alert{
+.alert, #cover_alert, #resume_alert{
     font-size: 12px;
     color: red;
 
@@ -602,6 +606,13 @@ footer h5{
 .uploaded_right{
     margin: auto 0;
 }
+.menu_career{
+    display: none;
+}
+/* #resume_box, #cover_box{
+    display: none;
+} */
+
 
 @media screen  and (max-width:600px) {
     .menu{
@@ -705,4 +716,17 @@ footer h5{
     }
 
 
+}
+@media screen and (max-width:650px) {
+    .menu_career{
+        display: block;
+    }
+    .nav_right{
+        display: none;
+    }
+}
+@media screen and (max-width:500px){
+    .column{
+        display: block;
+    }
 }

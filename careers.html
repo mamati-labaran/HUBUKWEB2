@@ -12,16 +12,17 @@
             <img src="Logomark.png" alt="logo">
             <span>hubuk</span>
         </div>
-        <div>
+        <div class="nav_right">
             <a href="#" class="open-roles">See open roles at hubuk</a>
             <a href="#" class="apply">Apply Now</a>
         </div>
+        <img src="menu.png" width="30px" height="30px" class="menu_career">
         
         
         <!-- <img src="menu.png" width="23px" height="23px" class="menu"></a> -->
     </header>
     <section class="form-container">
-        <form name="careerForm" id="careerForm" onsubmit="return validateForm()">
+        <form name="careerForm" id="careerForm">
             <header>UI/UX Designer</header>
             <a class="full-time" href="#">Full-time</a>
             <a class="remote" href="#">Remote</a>
@@ -61,6 +62,7 @@
                         <img class="upload_icon" src="Featured icon.png" width="40px" height="40px">
                         <p><span>Click to upload</span> or drag and drop</p>
                         <p class="support_text">The format should be PDF or Word document (Max 5MB)</p>
+                        <p id="resume_alert"></p>
                         <input type="file" class="resume" id="resume" name="resume" accept=".doc, .docx, .pdf" hidden>
                     </div>
                 </label> 
@@ -72,13 +74,14 @@
                     <div class="upload_border"> 
                         <img class="upload_icon" src="Featured icon.png" width="40px" height="40px">
                         <p><span>Click to upload</span> or drag and drop</p>
-                        <p>The format should be PDF or Word document (Max 5MB)</p>
+                        <p class="support_text">The format should be PDF or Word document (Max 5MB)</p>
+                        <p id="cover_alert"></p>
                         <input type="file" class="cover" name="cover" id="cover" accept=".doc, .docx, .pdf" hidden>
                     </div>
                 </label> 
                 
             </div>
-            <div class="uploaded_box">
+            <div class="uploaded_box" id="resume_box">
                 <div class="uploaded_left">
                     
                     <placeholder>
@@ -88,7 +91,7 @@
                 </div>
                 <img id="resume_delete" class="uploaded_right" src="Icon.png" width="15" height="15">
             </div>
-            <div class="uploaded_box">
+            <div class="uploaded_box" id="cover_box">
                 <div class="uploaded_left">
                 
                     <p id="cover_name">Cover Letter</p>
