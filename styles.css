@@ -69,6 +69,9 @@ body{
     
     
 }
+.nav-links ul li a:hover{
+    border-bottom: 2px solid #6C2B89
+}
 .nav-links button{
     border: none;
     width: 140px;
@@ -467,7 +470,7 @@ footer h5{
     margin: 5vw auto;
 }
 .form-container header{
-    font-size: 7vw;
+    font-size: clamp(30px, 7vw, 60px);
 }
 .form-container h2{
     margin-top: 20px;
@@ -479,7 +482,7 @@ footer h5{
     margin-left: 7px;
 }
 .full-time, .remote{
-    font-size: 18px;
+    font-size: 3vw;
     color: #6C2B89;
     padding: 4px 18px;
     text-decoration: none;

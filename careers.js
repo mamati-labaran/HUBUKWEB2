@@ -1,7 +1,7 @@
 const resume_file_input = document.getElementById('resume');
 document.getElementById('resume_box').style.display = 'none';
 document.getElementById('cover_box').style.display = 'none';
-const allowedextensions = ['pdf', 'docx', 'doc', 'pdf']
+const allowedextensions = ['pdf', 'docx', 'doc']
 
 
 resume_file_input.addEventListener('change', () => {
@@ -36,6 +36,7 @@ resume_file_input.addEventListener('change', () => {
     
 });
 resume_delete.addEventListener('click', ()=>{
+    resume_file_input.value = '';
     document.getElementById('resume_box').style.display = 'none';   
 });
 
@@ -70,6 +71,7 @@ cover_file_input.addEventListener('change', () => {
         
 });
 cover_delete.addEventListener('click',() => {
+    cover_file_input.value = '';
     document.getElementById('cover_box').style.display = 'none';
 
 });
@@ -78,7 +80,6 @@ document.getElementById("careerForm").addEventListener("submit", function(event)
     clear();
     // Prevent the default form submission
     event.preventDefault();
-    //let fname = document.forms["careerForm"]["first-name"].value;
     let fname = document.forms["careerForm"]["first-name"].value;
     let lname = document.forms["careerForm"]["last-name"].value;
     const nameRegex = /^[a-zA-Z]+(?:[\s'-][a-zA-Z]+)*$/;
@@ -110,16 +111,6 @@ document.getElementById("careerForm").addEventListener("submit", function(event)
     if (isValid){
         window.location.href = "success.html?name=" + encodeURIComponent(fname);
     }
-    
-    
-
-
-
-    // Run the validation function
-    // if (validateForm()) {
-    //     // If validation passes, redirect to another page with the name as query parameter
-    //     window.location.href = "success.html?name=" + encodeURIComponent(fname);
-    // }
 });
 function clear(){
     document.getElementById("fnameAlert").innerHTML=""
