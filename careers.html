@@ -14,7 +14,7 @@
         </div>
         <div class="nav_right">
             <a href="#" class="open-roles">See open roles at hubuk</a>
-            <a href="#" class="apply">Apply Now</a>
+            <a href="success.html" class="apply" id="apply">Apply Now</a>
         </div>
         <img src="menu.png" width="30px" height="30px" class="menu_career">
         
@@ -22,7 +22,7 @@
         <!-- <img src="menu.png" width="23px" height="23px" class="menu"></a> -->
     </header>
     <section class="form-container">
-        <form name="careerForm" id="careerForm">
+        <form name="careerForm" id="careerForm" onsubmit="submitForm()">
             <header>UI/UX Designer</header>
             <a class="full-time" href="#">Full-time</a>
             <a class="remote" href="#">Remote</a>
@@ -54,6 +54,7 @@
             <div class="input-box">
                 <label for="address">Parmanent Address</label>
                 <input type="text" class="address" id="address">
+                <p id="addressAlert" class="alert"></p>
             </div>
             <div class="upload">
                 <label for="resume">
@@ -109,7 +110,8 @@
                     <input type="url" class="portfolio_link" name="portfolio_link" id="portfolio_link">
                 </div>
             </div>
-            <input type="submit" class="submit" name="submit" value="Submit your application">
+            <input type="submit" class="submit" name="submit" value="Submit your application" id="submit">
+            <p id="data"></p>
         </form>
     </section>
     <footer>

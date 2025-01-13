@@ -19,9 +19,11 @@
         function goBack() {
             window.location.href = "careers.html";
         }
-        const username = new URLSearchParams(window.location.search).get('name');
-        document.getElementById('success_name').innerHTML = username;
-        //document.getElementById("success_message").innerHTML = "thank you "+username+" for applying!";
+        const username = localStorage.getItem("username");
+        if (username) {
+            document.getElementById('success_name').innerHTML = username;
+        }
+        
         
     </script>
     

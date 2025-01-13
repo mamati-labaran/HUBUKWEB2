@@ -104,17 +104,77 @@ document.getElementById("careerForm").addEventListener("submit", function(event)
     }
     let phone = document.forms["careerForm"]["phone"].value;
     //COME BACK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PUT REGEX INSTEAAD!!!!!!!!
-    if(isNaN(phone)){
+    if(isNaN(phone)|| phone===""){
         document.getElementById("phoneAlert").innerHTML="Please enter a valid phone number!"
         isValid = false;
     }
-    if (isValid){
-        window.location.href = "success.html?name=" + encodeURIComponent(fname);
+    let address = document.forms["careerForm"]["address"].value;
+    if(address===""){
+        document.getElementById("addressAlert").innerHTML="Please enter your address!"
+        isValid = false;
     }
+    if (isValid){
+        localStorage.setItem("username", fname);
+       // window.location.href = "success.html";
+    }
+   
 });
 function clear(){
     document.getElementById("fnameAlert").innerHTML=""
     document.getElementById("lnameAlert").innerHTML=""
     document.getElementById("emailAlert").innerHTML=""
     document.getElementById("phoneAlert").innerHTML=""
+}
+async function submitForm() {
+    // Store form inputs in variables
+    let fname = document.forms["careerForm"]["first-name"].value;
+    let lname = document.forms["careerForm"]["last-name"].value;
+    let email = document.forms["careerForm"]["email"].value;
+    let phone = document.forms["careerForm"]["phone"].value;
+    let address = document.forms["careerForm"]["address"].value;
+    const resume_file = resume_file_input.files[0];
+    const cover_file = cover_file_input.files[0];
+    let portfolio = document.forms["careerForm"]["portfolio_link"].value;
+    let linkedIn = document.forms["careerForm"]["linkedIn"].value;
+    let jobId = 1;
+
+    // Create FormData object
+    const formData = new FormData();
+    formData.append('jobId', jobId);
+    formData.append('firstName', fname);
+    formData.append('lasttName', lname);
+    formData.append('email', email);
+    formData.append('phoneNumber', phone);
+    formData.append('permanentAddress', address);
+    formData.append('CV', resume_file);
+    formData.append('coverLetter', cover_file);
+    formData.append('linkedinProfile', linkedIn);
+    formData.append('portfolioWebsite', portfolio);
+
+    try {
+        // Send POST request using Fetch API
+        const response = await fetch('https://api.hubuk.ng/api/JobApplicantion/Apply', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.status === 200) {
+            alert("successful")
+            window.location.href = "success.html";
+        }else if(response.status === 500){
+            window.location.href = "error.html";
+        }else if(response.status ===400){
+            alert("Please check your inputs and try again.")
+        }else{
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        // Parse and display the response
+        const data = await response.json();
+        document.getElementById('data').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+    } catch (error) {
+        console.error('Error:', error);
+
+        // Display error message
+        document.getElementById('data').innerHTML = '<span class="error">An error occurred while submitting the form.</span>';
+    }
 }
