@@ -113,10 +113,16 @@ document.getElementById("careerForm").addEventListener("submit", function(event)
         document.getElementById("addressAlert").innerHTML="Please enter your address!"
         isValid = false;
     }
+    
+    
     if (isValid){
+        
         localStorage.setItem("username", fname);
        // window.location.href = "success.html";
+    }else{
+        
     }
+    submitForm();
    
 });
 function clear(){
@@ -137,6 +143,10 @@ async function submitForm() {
     let portfolio = document.forms["careerForm"]["portfolio_link"].value;
     let linkedIn = document.forms["careerForm"]["linkedIn"].value;
     let jobId = 1;
+    submitBtn = document.getElementById("submit");
+
+    submitBtn.innerHTML = "Submitting..."
+    submitBtn.disabled = true;
 
     // Create FormData object
     const formData = new FormData();
@@ -170,11 +180,14 @@ async function submitForm() {
         }
         // Parse and display the response
         const data = await response.json();
-        document.getElementById('data').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        //document.getElementById('data').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
     } catch (error) {
         console.error('Error:', error);
 
         // Display error message
         document.getElementById('data').innerHTML = '<span class="error">An error occurred while submitting the form.</span>';
+    }finally{
+        submitBtn.innerHTML = "Submit Your Application";
+        submitBtn.disabled = false;
     }
 }
